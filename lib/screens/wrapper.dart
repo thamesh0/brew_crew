@@ -1,4 +1,4 @@
-import 'package:brew_crew_master/screens/authenticate/authenticate.dart';
+import 'package:brew_crew/screens/authenticate/authenticate.dart';
 import 'package:flutter/material.dart';
 
 class Wrapper extends StatefulWidget {
