@@ -1,5 +1,6 @@
+import 'screens/wrapper.dart';
 import 'package:flutter/material.dart';
-import 'screens/home_screen/wrapper.dart';
+import 'package:flutter/services.dart';
 import 'screens/home_screen/home_page.dart';
 import 'screens/authenticate/authenticate.dart';
 
@@ -13,12 +14,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+
     return MaterialApp(
       routes: {
         '/': (context) => const Wrapper(),
         '/home_page': (context) => const HomePage(),
         '/authenticate': (context) => const Auth(),
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }

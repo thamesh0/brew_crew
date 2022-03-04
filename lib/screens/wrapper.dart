@@ -1,3 +1,4 @@
+import 'package:brew_crew_master/screens/authenticate/authenticate.dart';
 import 'package:flutter/material.dart';
 
 class Wrapper extends StatefulWidget {
@@ -10,6 +11,8 @@ class Wrapper extends StatefulWidget {
 class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+
+    // Return either Home or Auth widget.
+    return const Auth();
   }
 }
