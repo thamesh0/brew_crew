@@ -1,5 +1,9 @@
-import 'package:brew_crew/screens/authenticate/authenticate.dart';
+import '/screens/authenticate/authenticate.dart';
+import '/screens/home_screen/home_page.dart';
+import 'package:provider/provider.dart';
+import '/screens/loading_screen/loading.dart';
 import 'package:flutter/material.dart';
+import '/models/user.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({Key? key}) : super(key: key);
@@ -11,8 +15,13 @@ class Wrapper extends StatefulWidget {
 class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
-
+    final user = Provider.of<MyUser?>(context);
+    print(user);
     // Return either Home or Auth widget.
-    return const Auth();
+    if (user == null) {
+      return const Auth();
+    } else {
+      return const HomePage();
+    }
   }
 }
